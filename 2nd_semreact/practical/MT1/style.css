@@ -1,0 +1,72 @@
+body{
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #dbe8ff, #f1f7ff);
+    padding: 40px;
+    margin: 0;
+}
+
+.parent{
+    max-width: 480px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #2a3b73;
+    margin-bottom: 24px;
+}
+
+input{
+    padding: 10px 14px;
+    width: 63%;
+    border: 2px solid #c8d9ff;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.25s ease;
+}
+
+input:focus {
+    border-color: #6d8bff;
+    box-shadow: 0 0 8px rgba(109, 139, 255, 0.4);
+}
+
+button {
+    padding: 10px 16px;
+    background: #6d8bff;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background: #5b75e8;
+    transform: translateY(-1px);
+}
+
+.card {
+    background: #ffffffcc;
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Text Hint */
+.hint {
+    color: #5f6b87;
+    font-size: 14px;
+    opacity: 0.8;
+}
