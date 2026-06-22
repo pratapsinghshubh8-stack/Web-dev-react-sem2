@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Cart</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    padding:30px;
+}
+
+.item{
+    border:1px solid #ccc;
+    padding:15px;
+    margin-bottom:10px;
+}
+
+button{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Shopping Cart</h1>
+
+<div id="cart-container"></div>
+
+<script>
+
+let cart =
+JSON.parse(
+sessionStorage.getItem("cart")
+) || [];
+
+const container =
+document.getElementById(
+"cart-container"
+);
+
+function renderCart()
+{
+    container.innerHTML = "";
+
+    if(cart.length === 0)
+    {
+        container.innerHTML =
+        "<h3>Cart is Empty</h3>";
+
+        return;
+    }
+
+    cart.forEach((item,index)=>{
+
+        container.innerHTML += `
+        <div class="item">
+
+            <h3>${item}</h3>
+
+            <button onclick=
+            "removeItem(${index})">
+
+            Remove
+
+            </button>
+
+        </div>
+        `;
+    });
+}
+
+function removeItem(index)
+{
+    cart.splice(index,1);
+
+    sessionStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    renderCart();
+}
+
+renderCart();
+
+</script>
+
+</body>
+</html>
